@@ -15,14 +15,14 @@ Before using this script, ensure you have the following:
 - Clone the repository:
 
 ```
-git clone https://github.com/nikhilyerra/Box.com-to-HiperGator-Data-Transfer-Automation-.git
+git clone https://github.com/SarderLab/Instance-to-Instance-DSA-Data-Transfer.git
 ```
 
 
 - Run the script using the following command:
 
 ```
-python copy_annotations.py --src-api 'Instance_URL' --dest-api 'Instance_URL' --src-user SOURCE_USERNAME --dest-user DESTINATION_USERNAME --src-password 'SOURCE_PASSWORD' --dest-password 'DESTINATION_PASSWORD' --src-path 'SOURCE_PATH' --dest-path 'DESTINATION_PATH' --replace
+python transfer.py --src-api 'Instance_URL' --dest-api 'Instance_URL' --src-user SOURCE_USERNAME --dest-user DESTINATION_USERNAME --src-password 'SOURCE_PASSWORD' --dest-password 'DESTINATION_PASSWORD' --src-path 'SOURCE_PATH' --dest-path 'DESTINATION_PATH' --replace
 
 ```
 
