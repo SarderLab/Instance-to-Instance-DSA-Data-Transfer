@@ -58,8 +58,7 @@ def copy_folder(gcs, gcd, sparent, dparent, opts):  # noqa
                 if hasli and file['_id'] == sitem['largeImage'].get('fileId'):
                     setli = dfile
         if setli:
-            ditem = gcd.createItem(
-                dparent['_id'], sitem['name'], sitem['description'], True)
+            ditem = gcd.getItem(ditem['_id'])
             if 'largeImage' not in ditem or ditem['largeImage'].get('fileId') != setli['_id']:
                 print('set largeImage fileId')
                 gcd.delete(f'item/{ditem["_id"]}/tiles')
@@ -99,6 +98,7 @@ def copy_resource(gcs, gcd, src_path, dest_path, opts):  # noqa
         for path in ['user', 'collection']:
             copy_resource(
                 gcs, gcd, os.path.join(src_path, path), os.path.join(dest_path, path), opts)
+        return
     if src_path.rstrip('/') in {'/user', '/collection'}:
         try:
             gcd.get('resource/lookup', parameters={'path': dest_path})
